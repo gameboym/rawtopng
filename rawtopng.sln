@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "topng", "topng\topng.vcxproj", "{D60687CF-3149-45C2-B09D-489EA53BE70F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D60687CF-3149-45C2-B09D-489EA53BE70F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D60687CF-3149-45C2-B09D-489EA53BE70F}.Debug|Win32.Build.0 = Debug|Win32
+		{D60687CF-3149-45C2-B09D-489EA53BE70F}.Release|Win32.ActiveCfg = Release|Win32
+		{D60687CF-3149-45C2-B09D-489EA53BE70F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
