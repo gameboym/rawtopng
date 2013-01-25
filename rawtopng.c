@@ -5,7 +5,7 @@
 #include "png.h"
 #include "nisetro_if_conv.h"
 
-#define VERSION "1.1.1"
+#define VERSION "1.2.1"
 
 #define MAXTHREAD 20
 #define fseek _fseeki64
