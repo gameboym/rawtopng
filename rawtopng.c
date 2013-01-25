@@ -5,7 +5,7 @@
 #include "png.h"
 #include "nisetro_if_conv.h"
 
-#define VERSION "1.1"
+#define VERSION "1.1.1"
 
 #define MAXTHREAD 20
 #define fseek _fseeki64
@@ -18,7 +18,8 @@
 #define CONSOLE_SWANCRYSTAL			3
 #define CONSOLE_GAMEBOY				4
 #define CONSOLE_PIECE				5
-#define MAX_CONSOLE_NUM				6
+#define CONSOLE_GAMEGEAR			6
+#define MAX_CONSOLE_NUM				7
 #define MAX_NAME_SIZE				32
 
 typedef struct consoledata{
@@ -37,6 +38,7 @@ const CONSOLEDATA ConsoleData[MAX_CONSOLE_NUM] = {
 	{224,	144,	4,			75,		"WS_"},		// SC
 	{160,	144,	2,			60,		"GB_"},		// GB
 	{128,	88,		2,			60,		"PIECE_"},	// PIECE
+	{160,	144,	4,			60,		"GG_"},		// GAMEGEAR
 };
 
 typedef struct pngparm{
@@ -89,8 +91,8 @@ void show_opt(FILE *fp, const char *filename){
 	printf("==== 偽トロ for Old Games RAW変換器 Ver %s ====\n", VERSION);
 	printf("                        by gbm   original ピピン\n");
 	printf("\n");
-	printf("%s -h(g|c|n|w|p) [オプション] ファイル名\n", filename);
-	printf("  -h  : ＊ハード選択(入力必須)＊　(g=GB c=GBC n=NGP w=WS p=PIECE)\n");
+	printf("%s -h(g|c|n|w|p|s) [オプション] ファイル名\n", filename);
+	printf("  -h  : ＊ハード選択(入力必須)＊　(g=GB c=GBC n=NGP w=WS p=PIECE s=GAMEGEAR)\n");
 	printf("  -tn : スレッド数(1～20 デフォルト2)\n");
 	printf("  -r  : 自動補修\n");
 	printf("  -ln : 回転モード(0:左回転・1:右回転)\n");
@@ -129,6 +131,8 @@ int main( int argc, char *argv[] )
 					g_console = CONSOLE_SWANCRYSTAL; break;
 				case 'p':
 					g_console = CONSOLE_PIECE; break;
+				case 's':
+					g_console = CONSOLE_GAMEGEAR; break;
 				default:
 					printf("パラメータがおかしい = %c\n", argv[i][2]);
 					show_opt(fp, argv[0]);
